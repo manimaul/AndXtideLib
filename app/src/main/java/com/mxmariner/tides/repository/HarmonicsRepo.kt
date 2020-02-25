@@ -2,21 +2,22 @@ package com.mxmariner.tides.repository
 
 import android.content.Context
 import android.os.AsyncTask
-import com.github.salomonbrys.kodein.Kodein
-import com.github.salomonbrys.kodein.instance
+import com.mxmariner.di.AppScope
 import com.mxmariner.mxtide.api.ITidesAndCurrents
 import com.mxmariner.tides.util.PerfTimer
+import javax.inject.Inject
 
-class HarmonicsRepo(kodein: Kodein) {
+@AppScope
+class HarmonicsRepo @Inject constructor(
+  private val context: Context,
+  val tidesAndCurrents: ITidesAndCurrents
+) {
 
-    private val context: Context = kodein.instance()
-    val tidesAndCurrents: ITidesAndCurrents = kodein.instance()
-
-    fun initializeAsync() {
-        AsyncTask.execute {
-            PerfTimer.markEventStart("HarmonicsRepo.initialize()")
-            tidesAndCurrents.addHarmonicsFile(context, "harmonics_dwf_20190620_free_tcd")
-            PerfTimer.markEventStop("HarmonicsRepo.initialize()")
-        }
+  fun initializeAsync() {
+    AsyncTask.execute {
+      PerfTimer.markEventStart("HarmonicsRepo.initialize()")
+      tidesAndCurrents.addHarmonicsFile(context, "harmonics_dwf_20190620_free_tcd")
+      PerfTimer.markEventStop("HarmonicsRepo.initialize()")
     }
+  }
 }
