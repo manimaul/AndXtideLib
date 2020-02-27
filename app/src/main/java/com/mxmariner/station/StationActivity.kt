@@ -36,7 +36,6 @@ class StationActivity : AppCompatActivity() {
   private val stationDate = BehaviorSubject.create<DateTime>()
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    // val injector = StationModuleInjector.activityScopeAssembly(this)
     super.onCreate(savedInstanceState)
     Injector.activityInjector(this).inject(this)
     setContentView(R.layout.activity_station)
