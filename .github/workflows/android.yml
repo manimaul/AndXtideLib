@@ -9,7 +9,7 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v2
       - name: Build with Gradle
-        uses: manimaul/android-builder-action@android-29-ndk-21.0.5594570
+        uses: manimaul/android-builder-action@android-29
         with:
           entrypoint: /github/workspace/gradlew
           args: build
