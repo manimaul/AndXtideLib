@@ -1,5 +1,7 @@
 ![icon](icon_src/icon.png)
 
+![Android Build](https://github.com/manimaul/mxtide-android/workflows/Android%20Build/badge.svg)
+
 <a href='https://play.google.com/store/apps/details?id=com.mxmariner.tides'>
 <img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' width="128"/>
 </a>
