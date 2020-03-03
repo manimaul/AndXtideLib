@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
+        with:
+          submodules: true
       - name: Build with Gradle
         uses: manimaul/android-builder-action@android-29_ndk-21.0.6113669
         with:
